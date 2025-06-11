@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DtsServiceConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <StopExecutingPackagesOnShutdown>true</StopExecutingPackagesOnShutdown>
+  <TopLevelFolders>
+    <Folder xsi:type="SqlServerFolder">
+      <Name>MSDB</Name>
+      <ServerName>.\LOCKITDB</ServerName>
+    </Folder>
+    <Folder xsi:type="FileSystemFolder">
+      <Name>File System</Name>
+      <StorePath>..\Packages</StorePath>
+    </Folder>
+  </TopLevelFolders>
+</DtsServiceConfiguration>
