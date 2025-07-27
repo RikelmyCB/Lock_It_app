@@ -1,0 +1,15 @@
+2025-05-25 20:26:16.730	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 465 Starting msftefd.exe
+2025-05-25 20:26:16.734	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv C:\React\lockit\DATABASE\MSSQL16.LOCKITDB\MSSQL\Binn\fdhost.exe
+2025-05-25 20:26:16.737	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv MSSQL16.LOCKITDBC45c3dd2cfed5ef429dfbc58f3c01f2f958b79e7c
+2025-05-25 20:26:16.744	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv MSSQL16.LOCKITDB
+2025-05-25 20:26:16.752	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv MSSQL16.LOCKITDB
+2025-05-25 20:26:16.757	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv 32
+2025-05-25 20:26:16.760	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv 
+2025-05-25 20:26:16.761	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv 16384
+2025-05-25 20:26:16.762	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv M
+2025-05-25 20:26:16.764	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv 0
+2025-05-25 20:26:16.766	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv 
+2025-05-25 20:26:16.768	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv 
+2025-05-25 20:26:16.771	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 505 argc 12, argv 
+2025-05-25 20:26:16.784	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 586 msFteFD has started
+2025-05-26 12:24:02.579	 File [sql\ntdbms\msql\fulltext\src\search\Search\fdexe\fd.cxx] Line 596 FD is shutdown name:MSSQL16.LOCKITDBC45c3dd2cfed5ef429dfbc58f3c01f2f958b79e7c

@@ -1,0 +1,99 @@
+5/24/2025 12:01:39 PM [Thread:2600] [CreditFeedbackReceiver:ErrorEvent] (Error, High): IO Exception
+System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security.NegotiateStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.ReadByte()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.DataChannel.Credit.CreditFeedbackReceiver.Run()
+5/24/2025 12:01:39 PM [Thread:3604] [DataChannelReceiver:ErrorEvent] (Error, High): IO Exception, remoteNode: KELMI:63830 
+System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security.NegotiateStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.ReadByte()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.DataChannel.DataChannelReceiver.Run()
+5/24/2025 12:01:39 PM [Thread:8972] [ControlChannel:ErrorEvent] (Error, High): Closing control channel with node LOCALHOST|16450|True due to error on message queue.
+System.Runtime.Serialization.SerializationException: End of Stream encountered before parsing was completed.
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.Run()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.Serializer`1.Receive(Stream stream)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.AbstractControlChannelConnection.ReceiveInternal[T]()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.TryReceive(IControlChannelConnection receiveConnection, IProtocolMessage& message)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.ReceiveMessageWithRetries(CancellationToken queueToken, IControlChannelConnection& receiveConnection)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.ReceiveIncomingMessages()
+5/24/2025 12:04:37 PM [Thread:19788] [CreditFeedbackReceiver:ErrorEvent] (Error, High): IO Exception
+System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security.NegotiateStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.ReadByte()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.DataChannel.Credit.CreditFeedbackReceiver.Run()
+5/24/2025 12:04:37 PM [Thread:13304] [DataChannelReceiver:ErrorEvent] (Error, High): IO Exception, remoteNode: KELMI:63830 
+System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security.NegotiateStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.ReadByte()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.DataChannel.DataChannelReceiver.Run()
+5/24/2025 12:04:37 PM [Thread:20752] [ControlChannel:ErrorEvent] (Error, High): Closing control channel with node LOCALHOST|16450|True due to error on message queue.
+System.Runtime.Serialization.SerializationException: End of Stream encountered before parsing was completed.
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.Run()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.Serializer`1.Receive(Stream stream)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.AbstractControlChannelConnection.ReceiveInternal[T]()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.TryReceive(IControlChannelConnection receiveConnection, IProtocolMessage& message)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.ReceiveMessageWithRetries(CancellationToken queueToken, IControlChannelConnection& receiveConnection)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.ReceiveIncomingMessages()
+5/26/2025 7:25:00 AM [Thread:17984] [DataChannelReceiver:ErrorEvent] (Error, High): IO Exception, remoteNode: KELMI:63830 
+System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security.NegotiateStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.ReadByte()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.DataChannel.DataChannelReceiver.Run()
+5/26/2025 7:25:00 AM [Thread:18264] [CreditFeedbackReceiver:ErrorEvent] (Error, High): IO Exception
+System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security.NegotiateStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.ReadByte()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.DataChannel.Credit.CreditFeedbackReceiver.Run()
+5/26/2025 7:25:00 AM [Thread:18264] [ControlChannel:ErrorEvent] (Error, High): Closing control channel with node LOCALHOST|16450|True due to error on message queue.
+System.Runtime.Serialization.SerializationException: End of Stream encountered before parsing was completed.
+   at System.Runtime.Serialization.Formatters.Binary.__BinaryParser.Run()
+   at System.Runtime.Serialization.Formatters.Binary.ObjectReader.Deserialize(HeaderHandler handler, __BinaryParser serParser, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.Serializer`1.Receive(Stream stream)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.AbstractControlChannelConnection.ReceiveInternal[T]()
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.TryReceive(IControlChannelConnection receiveConnection, IProtocolMessage& message)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.ReceiveMessageWithRetries(CancellationToken queueToken, IControlChannelConnection& receiveConnection)
+   at Microsoft.SqlServer.DataWarehouse.DataMovement.MessagingProtocol.ControlMessageQueue.ReceiveIncomingMessages()
