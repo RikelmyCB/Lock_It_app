@@ -6,6 +6,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
 import Constants from 'expo-constants';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function WelcomeScreen() {
   const api_url = Constants.expoConfig?.extra?.API_URL;
@@ -27,8 +28,8 @@ export default function WelcomeScreen() {
     try {
       const token = await getToken();
       setLoading(true);
-      const response = await axios.get(api_url + '/api/auth/protected', {
-        headers: { authorization: `Bearer ${token}` },
+      const response = await axios.get(api_url + '/protected', {
+        headers: { Authorization: `Bearer ${token}` },
       });
       return response.status === 200;
     } catch (error: any) {
@@ -57,25 +58,50 @@ export default function WelcomeScreen() {
   };
 
   return (
-    <LinearGradient colors={['#6a0dad', '#8a2be2']} style={styles.container}>
-      <Animatable.Image 
-        animation="fadeInDown" 
-        source={require('../../../assets/LockIcon.png')} 
-        style={styles.image} 
-        resizeMode="contain"
-      />
-      
-      <Animatable.Text animation="fadeInUp" style={styles.title}>
-        Bem-Vindo ao LOCK IT!
-      </Animatable.Text>
-      
-      <Animatable.View animation="fadeInUp" delay={300} style={styles.contentContainer}>
-        <Text style={styles.subtitle}>Proteja suas informações com segurança e praticidade.</Text>
+    <LinearGradient colors={['#2C2C54', '#474787', '#5758BB']} style={styles.container}>
+      <View style={styles.content}>
+        <Animatable.View animation="fadeInDown" style={styles.iconContainer}>
+          <View style={styles.iconBackground}>
+            <Ionicons name="lock-closed" size={80} color="#F7F1E3" />
+          </View>
+        </Animatable.View>
         
-        <TouchableOpacity style={styles.button} onPress={handleNavigateToLogin}>
-          {loading ? <ActivityIndicator size="large" color="white" /> : <Text style={styles.buttonText}>Acessar</Text>}
-        </TouchableOpacity>
-      </Animatable.View>
+        <Animatable.Text animation="fadeInUp" style={styles.title}>
+          Bem-Vindo ao
+        </Animatable.Text>
+        <Animatable.Text animation="fadeInUp" delay={100} style={styles.appName}>
+          LOCK IT!
+        </Animatable.Text>
+        
+        <Animatable.View animation="fadeInUp" delay={200} style={styles.contentContainer}>
+          <Text style={styles.subtitle}>
+            Proteja suas informações com segurança e praticidade.
+          </Text>
+          
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={handleNavigateToLogin}
+            activeOpacity={0.8}
+            disabled={loading}
+          >
+            <LinearGradient 
+              colors={['#3B3B98', '#474787']} 
+              style={styles.buttonGradient}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              {loading ? (
+                <ActivityIndicator size="small" color="white" />
+              ) : (
+                <>
+                  <Ionicons name="arrow-forward" size={24} color="white" />
+                  <Text style={styles.buttonText}>Acessar</Text>
+                </>
+              )}
+            </LinearGradient>
+          </TouchableOpacity>
+        </Animatable.View>
+      </View>
     </LinearGradient>
   );
 }
@@ -83,56 +109,82 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  content: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
   },
-  image: {
-    width: 150,
-    height: 150,
-    marginBottom: 20,
+  iconContainer: {
+    marginBottom: 30,
+  },
+  iconBackground: {
+    width: 140,
+    height: 140,
+    borderRadius: 70,
+    backgroundColor: 'rgba(59, 59, 152, 0.3)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 3,
+    borderColor: 'rgba(247, 241, 227, 0.3)',
   },
   title: {
-    fontSize: 32,
-    color: '#fff',
+    fontSize: 28,
+    color: '#F7F1E3',
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 5,
+  },
+  appName: {
+    fontSize: 42,
+    color: '#F7F1E3',
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 40,
   },
   contentContainer: {
-    width: '90%',
-    backgroundColor: '#fff',
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#F7F1E3',
     padding: 30,
-    borderRadius: 20,
+    borderRadius: 24,
     alignItems: 'center',
-    elevation: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
+    shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.3,
-    shadowRadius: 5,
+    shadowRadius: 12,
+    elevation: 10,
   },
   subtitle: {
-    fontSize: 18,
-    color: '#444',
+    fontSize: 16,
+    color: '#474787',
     textAlign: 'center',
-    marginBottom: 25,
+    marginBottom: 30,
     fontWeight: '500',
+    lineHeight: 24,
   },
   button: {
     width: '100%',
-    height: 55,
-    backgroundColor: '#6a0dad',
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: '#6a0dad',
-    shadowOffset: { width: 0, height: 3 },
+    borderRadius: 16,
+    overflow: 'hidden',
+    shadowColor: '#3B3B98',
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.4,
-    shadowRadius: 4,
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  buttonGradient: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    gap: 10,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
   }
 });
