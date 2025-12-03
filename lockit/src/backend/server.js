@@ -65,11 +65,11 @@ app.use((req, res, next) => {
 
 // configuração da conexão com o banco de dados
 const db = mysql.createConnection({
-    host: process.env.DB_HOST || "localhost",
-    user: process.env.DB_USER || "databaseBackend",
-    password: process.env.DB_PASSWORD || "Rikelmy7@",
-    port: process.env.DB_PORT || 3306,
-    database: process.env.DB_NAME || "lockitdb",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME,
 });
 
 db.connect((err) => {
@@ -233,25 +233,53 @@ app.post('/api/addnote', async (req, res) => {
 
     const data_type = "note"
 
+    if (!user_id) {
+        return res.status(400).json({ message: 'user_id é obrigatório.' });
+    }
+
     if (!note_key || !note_value) {
         return res.status(400).json({ message: 'Por favor, preencha todos os campos.' });
     }
 
     try {
+        // Converter user_id para número
+        const userIdNum = parseInt(user_id, 10);
+        if (isNaN(userIdNum)) {
+            console.error(`Erro: user_id inválido - ${user_id}`);
+            return res.status(400).json({ message: 'user_id inválido.' });
+        }
+
+        // Verificar se o user_id existe na tabela users
+        const [userCheck] = await db.promise().query(
+            'SELECT user_id FROM users WHERE user_id = ?',
+            [userIdNum]
+        );
+
+        if (userCheck.length === 0) {
+            console.error(`Erro: user_id ${userIdNum} não encontrado na tabela users`);
+            return res.status(404).json({ message: 'Usuário não encontrado. Por favor, faça login novamente.' });
+        }
 
         const hashedNoteTitle = criptografarXOR(note_key, key);
         const hashedNoteValue = criptografarXOR(note_value, key);
 
-        console.log('Dados inseridos com sucesso.', 'hashedTitle: ', hashedNoteTitle, 'hashedNote', hashedNoteValue);
+        console.log(`Inserindo nota para user_id: ${userIdNum}`);
         //inserir as informações no banco de dados
         const [insertData] = await db.promise().query(
             'INSERT INTO user_data (user_id, note_key, note_value, data_type) VALUES (?, ?, ?, ?)',
-             [user_id, hashedNoteTitle, hashedNoteValue, data_type]);
+             [userIdNum, hashedNoteTitle, hashedNoteValue, data_type]);
             
+            console.log('Dados inseridos com sucesso.');
             return res.status(201).json({ message: 'Informações inseridas com sucesso.' });
 
     }catch(error){
-        console.error(`Erro ao inserir as informações no banco de dados: ${error}`);
+        console.error(`Erro ao inserir as informações no banco de dados:`, error);
+        
+        // Tratamento específico para erro de foreign key
+        if (error.code === 'ER_NO_REFERENCED_ROW_2' || error.code === '1452') {
+            return res.status(404).json({ message: 'Usuário não encontrado. Por favor, faça login novamente.' });
+        }
+        
         return res.status(500).json({ message: 'Erro ao inserir os dados.' });
     }
 })

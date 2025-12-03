@@ -35,7 +35,7 @@ export default function WelcomeScreen() {
     } catch (error: any) {
       console.error('Erro ao validar token no backend:', error.response?.data || error.message);
       setLoading(false);
-      navigation.navigate('Login');
+      navigation.navigate('Login' as never);
       return false;
     }
   };
@@ -46,14 +46,14 @@ export default function WelcomeScreen() {
       const isValid = await validateToken();
       if (isValid) {
         setLoading(false);
-        navigation.navigate('Main');
+        navigation.navigate('Main' as never);
       } else {
         console.log('Token inválido ou expirado.');
-        navigation.navigate('Login');
+        navigation.navigate('Login' as never);
       }
     } else {
       console.log('Nenhum token encontrado.');
-      navigation.navigate('Login');
+      navigation.navigate('Login' as never);
     }
   };
 
