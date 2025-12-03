@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "lockit",
+    "slug": "lockit",
+    "extra": {
+      "API_URL": "http://45.237.92.77:3000",
+      "eas": {
+        "projectId": "403ba342-af66-4594-8778-4371d6631b1d"
+      }
+    },
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.lockit"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
