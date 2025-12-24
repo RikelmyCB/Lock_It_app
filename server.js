@@ -43,7 +43,7 @@ function descriptografarXOR(dadosCriptografados, chave) {
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 55032;
 
 const SECRET_KEY = process.env.SECRET_KEY || 'e3f7b27d3fb512429ad7212bd15fcac1d70ac47f1fcac1f4176b428d666570e7f1fa4f7840827bf1d38b52575357d671ef43ffde8ac6ae1b71760bf38e524ace';
 const TOKEN_EXPIRATION = process.env.TOKEN_EXPIRATION || '150d'; // Tempo de expiração do token
