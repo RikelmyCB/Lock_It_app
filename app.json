@@ -3,11 +3,7 @@
     "name": "lockit",
     "slug": "lockit",
     "extra": {
-<<<<<<< Updated upstream
-      "API_URL": "http://45.237.92.77:3000",
-=======
-      "API_URL": "http://192.168.203.240:3000",
->>>>>>> Stashed changes
+      "API_URL": "https://lockitapp-production.up.railway.app",
       "eas": {
         "projectId": "403ba342-af66-4594-8778-4371d6631b1d"
       }

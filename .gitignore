@@ -31,3 +31,19 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.staging
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+docker-compose.override.yml
